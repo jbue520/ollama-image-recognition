@@ -11,7 +11,7 @@ This is a local AI-powered application that generates high-quality, detailed vid
 
 ### Features
 
-- **Image-to-Prompt**: Upload an image to get a detailed visual description converted into a premium video prompt.
+- **Image-to-Prompt**: Upload an image and optional keywords. AI analyzes visual details and combines them with your keywords to generate a premium video prompt.
 - **Text-to-Prompt**: Expand simple keywords into rich, cinematic video prompts.
 - **Multi-Model Support**: Designed to work with Ollama models.
 - **Multi-Language**: Supports English and Chinese output.
@@ -83,7 +83,7 @@ python app_old.py
 
 ### 主要功能
 
-- **图片转提示词**：上传图片，AI 将分析视觉细节并将其转化为顶级的视频生成提示词。
+- **图片转提示词**：上传图片并可设置关键词，AI 将结合视觉细节与您的关键词，生成顶级的视频生成提示词。
 - **文本转提示词**：将简单的关键词扩展为丰富、电影质感的视频提示词。
 - **多模型支持**：专为 Ollama 模型设计。
 - **多语言支持**：支持生成英文和中文提示词。
