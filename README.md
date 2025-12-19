@@ -1,4 +1,4 @@
-# Ollama Image Recognition & Prompt Generator / Ollama 图片识别与提示词生成器
+# Video Prompt Generator / 视频提示词生成器
 
 [English](#english) | [中文 (Chinese)](#chinese)
 
