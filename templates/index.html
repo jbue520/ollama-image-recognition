@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Prompt Architect</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/lib/fontawesome/css/all.min.css">
+</head>
+
+<body>
+    <div id="particles-js" class="particles-container"></div>
+    <div class="background-mesh"></div>
+
+    <div class="container">
+        <header>
+            <div class="language-switcher-top">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="cn">CN</button>
+            </div>
+            <h1><i class="fa-solid fa-wand-magic-sparkles"></i> <span data-i18n="title">Prompt Architect</span></h1>
+            <p class="subtitle" data-i18n="subtitle">Transform images into premium AI video prompting masterpieces.</p>
+        </header>
+
+        <main class="glass-panel">
+            <div class="mode-switcher-container">
+                <div class="mode-toggle">
+                    <input type="radio" id="mode-image" name="generationMode" value="image" checked>
+                    <label for="mode-image"><i class="fa-regular fa-image"></i> <span data-i18n="mode_image">Image to
+                            Prompt</span></label>
+
+                    <input type="radio" id="mode-text" name="generationMode" value="text">
+                    <label for="mode-text"><i class="fa-solid fa-keyboard"></i> <span data-i18n="mode_text">Text to
+                            Prompt</span></label>
+                </div>
+            </div>
+
+            <div class="upload-section" id="drop-zone">
+                <input type="file" id="imageInput" accept="image/*" hidden>
+                <div class="upload-content">
+                    <i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
+                    <h3 data-i18n="upload_title">Drag & Drop or Click to Upload</h3>
+                    <p class="file-name" id="fileName" data-i18n="upload_subtitle">Supported formats: JPG, PNG, GIF</p>
+                </div>
+                <!-- Preview Image -->
+                <img id="imagePreview" class="image-preview" alt="Preview">
+            </div>
+
+            <div class="controls-section">
+                <div class="input-group">
+                    <label for="modelSelect"><i class="fa-solid fa-robot"></i> <span data-i18n="model_label">Select
+                            Model</span></label>
+                    <select id="modelSelect">
+                        <option value="" disabled selected>Loading models...</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="sequenceCount"><i class="fa-solid fa-layer-group"></i> <span
+                            data-i18n="sequence_label">Sequence Length</span></label>
+                    <div class="range-container">
+                        <input type="number" id="sequenceCount" min="1" max="5" value="1" class="sequence-input">
+                        <span class="range-hint" data-i18n="sequence_hint">(1-5 Scenes)</span>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="keywords"><i class="fa-solid fa-tags"></i> <span data-i18n="keywords_label">Custom
+                            Keywords (Optional)</span></label>
+                    <input type="text" id="keywords" placeholder="e.g. cyberpunk, cinematic lighting, masterpiece"
+                        data-i18n-placeholder="keywords_placeholder">
+                </div>
+
+                <div class="input-group">
+                    <label for="language"><i class="fa-solid fa-language"></i> <span
+                            data-i18n="output_lang_label">Output Language</span></label>
+                    <div class="language-toggle">
+                        <input type="radio" id="lang-en" name="language" value="en" checked>
+                        <label for="lang-en">English</label>
+
+                        <input type="radio" id="lang-cn" name="language" value="cn">
+                        <label for="lang-cn">中文 (Chinese)</label>
+                    </div>
+                </div>
+            </div>
+
+            <button id="generateBtn" class="generate-btn" disabled>
+                <span data-i18n="generate_btn">Generate Video Prompt</span>
+                <i class="fa-solid fa-bolt"></i>
+            </button>
+        </main>
+
+        <section class="result-section hidden" id="resultSection">
+            <div class="glass-panel result-panel">
+                <div class="result-header">
+                    <h2 data-i18n="result_title">Generated Prompt</h2>
+                    <button class="copy-btn" id="copyBtn"><i class="fa-regular fa-copy"></i> <span
+                            data-i18n="copy_btn">Copy</span></button>
+                </div>
+                <div class="result-content" id="resultText"></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay hidden" id="loadingOverlay">
+        <div class="loader"></div>
+        <p data-i18n="loading_text">Analyzing Image & Crafting Video Prompt...</p>
+    </div>
+
+    <script src="/static/lib/particles/particles.min.js"></script>
+    <script src="/static/js/script.js"></script>
+</body>
+
+</html>
